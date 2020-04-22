@@ -5,11 +5,11 @@ import App from './App';
 import { createStore } from 'redux';
 import { thunk } from 'redux-thunk';
 import { Provider } from 'react-redux';
-
+import currentUserReducer from './reducers/currentUserReducer'
 
 
 const reducer = combineReducers({
- 
+ currentUser: currentUserReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
