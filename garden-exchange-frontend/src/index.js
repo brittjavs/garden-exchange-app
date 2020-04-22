@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import { createStore } from 'redux';
-import { thunk } from 'redux-thunk';
+import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
+//compose combines middlewares to combine them into one argument that gets passed to the store
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import currentUserReducer from './reducers/currentUserReducer'
+import currentUserReducer from './reducers/currentUserReducer.js';
+import { BrowserRouter as Router } from 'react-router-dom'
 
 
 const reducer = combineReducers({
