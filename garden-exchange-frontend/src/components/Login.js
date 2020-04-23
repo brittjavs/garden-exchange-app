@@ -21,6 +21,12 @@ class Login extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.login(this.state)
+        this.setState({
+            username: '',
+            password: '',
+            city: '',
+            state: ''
+        })
     }
 
     render(){
@@ -36,6 +42,6 @@ class Login extends React.Component {
             </div>
         )
     }
-
 }
+
 export default connect(null, { login })(Login)

@@ -3,7 +3,7 @@ import './App.css';
 import Login from './components/Login'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
-import MainPageContainer from './containers/MainPageContainer';
+import HomePageContainer from './containers/HomePageContainer';
 
 class App extends React.Component {
 
@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render(){
     return (
-      this.props.currentUser ? <MainPageContainer /> : <Login />
+      this.props.currentUser ? <HomePageContainer /> : <Login />
     )
   }
 }

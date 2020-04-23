@@ -2,14 +2,15 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import { connect } from 'react-redux'
 
-class MainPageContainer extends React.Component {
+class HomePageContainer extends React.Component {
     render(){
         return(
             
-            <div className="MainPageContainer">
+            <div className="HomePageContainer">
                 <h4>
                 Welcome {this.props.currentUser.username}
                 </h4>
+                {this.props.currentUser.city}, {this.props.currentUser.state}
                 <NavBar />
             </div>
         )
@@ -22,4 +23,4 @@ const mapStateToProps = state => {
     }
   }
 
-  export default connect(mapStateToProps)(MainPageContainer);
+  export default connect(mapStateToProps)(HomePageContainer);
