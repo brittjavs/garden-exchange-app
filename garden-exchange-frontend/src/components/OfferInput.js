@@ -46,7 +46,7 @@ class OfferInput extends React.Component {
                     <label>Item Details</label>
                     <input type="text" value={this.state.details} name="details" placeholder="optional" onChange={this.handleOnChange}/>
                     <br />
-                    <input type="submit" value="Post Listing"/>
+                    <input type="submit" value="Submit Offer"/>
                 </form>
             </div>
         )
