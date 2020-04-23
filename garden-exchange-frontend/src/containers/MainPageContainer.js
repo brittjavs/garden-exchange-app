@@ -6,7 +6,7 @@ class MainPageContainer extends React.Component {
     render(){
         return(
             
-            <div>
+            <div className="MainPageContainer">
                 <h4>
                 Welcome {this.props.currentUser.username}
                 </h4>

@@ -3,7 +3,7 @@ import Logout from './Logout.js'
 
 const NavBar = () => {
     return(
-        <div>
+        <div className="NavBar">
             <Logout />
         </div>
     )
