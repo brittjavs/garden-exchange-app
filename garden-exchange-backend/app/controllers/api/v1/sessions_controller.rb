@@ -3,7 +3,6 @@ class Api::V1::SessionsController < ApplicationController
        user = User.find_by(username: params[:session][:username])
         if user && user.authenticate(params[:session][:password])
             session[:user_id] = user.id
-            byebug
             render json: UserSerializer.new(current_user).to_serialized_json
         else
             render json: {
@@ -20,5 +19,12 @@ class Api::V1::SessionsController < ApplicationController
                 error: "No one is logged in"
             }
         end
+    end
+
+    def destroy
+        session.clear
+        render json: {
+          notice: "successfully logged out"
+        }
     end
 end
