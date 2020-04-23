@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchListings } from '../actions/listings'
+import ListingInput from '../components/ListingInput'
+
 
 class ListingsContainer extends React.Component {
    
@@ -11,8 +13,8 @@ class ListingsContainer extends React.Component {
     render() {
         return (
             <div className="ListingsContainer">
-                {/* <ListingInput />
-                <Listings listings={this.props.listings}/> */}
+                <ListingInput />
+                {/* <Listings listings={this.props.listings}/> */}
             </div>
         )
     }
