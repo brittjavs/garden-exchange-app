@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchOffers } from '../actions/Offers'
+import { fetchOffers } from '../actions/offers'
 import OfferInput from '../components/OfferInput'
 import Offers from '../components/Offers'
 
@@ -15,7 +15,7 @@ class OffersContainer extends React.Component {
         return (
             <div className="OffersContainer">
                 <OfferInput />
-                <Offers Offers={this.props.Offers}/>
+                <Offers offers={this.props.offers}/>
             </div>
         )
     }

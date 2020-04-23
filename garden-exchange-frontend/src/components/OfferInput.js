@@ -54,4 +54,4 @@ class OfferInput extends React.Component {
 
 }
 
-export default connect(null, { createOffer })(ListingInput)
+export default connect(null, { createOffer })(OfferInput)

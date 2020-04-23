@@ -8,11 +8,13 @@ import { Provider } from 'react-redux';
 import currentUserReducer from './reducers/currentUserReducer';
 import { BrowserRouter as Router } from 'react-router-dom'
 import listingsReducer from './reducers/listingsReducer'
+import offersReducer from './reducers/offersReducer';
 
 
 const reducer = combineReducers({
  currentUser: currentUserReducer,
- listings: listingsReducer
+ listings: listingsReducer,
+ offers: offersReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

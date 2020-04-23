@@ -1,27 +1,16 @@
 import React from 'react'
+import Listing from './Listing'
 
 const Listings = ({ listings }) => {
-    return (
-        <div className="listing">
-            {listings.map(listing => 
-                <div key={listing.id}>
-                <h5>
-                {listing.date}
-                <br />
-                {listing.user.username} has {listing.qty} {listing.item} available for trade.
-                <br />
-                Details: {listing.details}
-                <br />
-                Looking For: {listing.wants}
-                <br />
-                category:{listing.category}
-                <br />
-                </h5>
-                <button>Make an Offer</button>
-                </div>
-            )}
-        </div>
-    )
+    const listingsList = listings.map(listing => {
+            return <Listing key={listing.id} listing={listing}/>
+    })
+
+    return(
+        <div className="listings">
+            {listingsList}
+         </div>
+    )    
 }
 
 export default Listings
