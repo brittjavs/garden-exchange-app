@@ -2,7 +2,6 @@ class Api::V1::ListingsController < ApplicationController
    
     def index
         if logged_in
-            byebug
             listings = Listing.all
             render json: ListingSerializer.new(listings).to_serialized_json
         else
@@ -11,8 +10,9 @@ class Api::V1::ListingsController < ApplicationController
     end
 
     def create
+        byebug
         if logged_in
-        listing = Listing.new(listing_params)
+        listing = current_user.listings.new(listing_params)
             if listing.save
                 render json: ListingSerializer.new(listing).to_serialized_json
             else
@@ -31,7 +31,7 @@ class Api::V1::ListingsController < ApplicationController
     private
 
     def listing_params
-        params.require(:listing).permit(:category, :item, :details, :qty, :user_id, :date)
+        params.require(:listing).permit(:category, :item, :details, :qty, :user_id, :date, :wants)
     end
 
 
