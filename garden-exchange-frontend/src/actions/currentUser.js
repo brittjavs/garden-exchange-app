@@ -16,7 +16,13 @@ export const login = credentials => {
                 body: JSON.stringify(credentials)
             })
             .then(resp => resp.json())
-            .then(user => console.log(user))
-        
+            .then(user => {
+                if (user.error){
+                    alert(user.error)
+                }
+                else {
+                    dispatch(setCurrentUser(user))
+                }
+            })
         }
 }
