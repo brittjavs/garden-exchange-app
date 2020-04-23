@@ -1,12 +1,14 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import { login } from '../actions/currentUser.js'
+import { connect } from 'react-redux'
+import { signup } from '../actions/currentUser.js'
 
-class Login extends React.Component {
-
+class Signup extends React.Component {
+   
     state = {
         username: '',
-        password: ''
+        password: '',
+        city: '',
+        state: ''
     }
 
 
@@ -18,10 +20,12 @@ class Login extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.login(this.state)
+        this.props.signup(this.state)
         this.setState({
             username: '',
-            password: ''
+            password: '',
+            city: '',
+            state: ''
         })
     }
 
@@ -33,11 +37,15 @@ class Login extends React.Component {
                     <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                     <label>Password</label>
                     <input type="text" name="password" value={this.state.password} onChange={this.handleChange} />
-                    <input type="submit" value="Log In"/>
+                    <label>City</label>
+                    <input type="text" name="city" value={this.state.city} onChange={this.handleChange} />
+                    <label>State</label>
+                    <input type="text" name="state" value={this.state.state} onChange={this.handleChange} />
+                    <input type="submit" value="Sign Up"/>
                 </form>
             </div>
         )
     }
 }
 
-export default connect(null, { login })(Login)
+export default connect(null, {signup})(Signup)

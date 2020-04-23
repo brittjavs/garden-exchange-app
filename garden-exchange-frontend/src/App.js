@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Login from './components/Login'
+import AccessPage from './containers/AccessPage'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
-import HomePageContainer from './containers/HomePageContainer';
+import HomePageContainer from './containers/HomePageContainer'
 
 class App extends React.Component {
 
@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render(){
     return (
-      this.props.currentUser ? <HomePageContainer /> : <Login />
+      this.props.currentUser ? <HomePageContainer /> : <AccessPage/>
     )
   }
 }

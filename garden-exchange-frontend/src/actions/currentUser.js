@@ -13,6 +13,34 @@ export const clearCurrentUser = () => {
 
 //asynchronous action creator
 
+export const signup = (credentials) => {
+    console.log("credentials are", credentials)
+    
+    return dispatch => {
+        const newUserInfo = {
+            user: credentials
+        }
+        return fetch("http://localhost:3001/api/v1/signup", {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newUserInfo)
+        })
+            .then(resp => resp.json())
+            .then(user => {
+                if (user.error){
+                    alert(user.error)
+                }
+                else {
+                    dispatch(setCurrentUser(user))
+                }
+            })
+        .catch(console.log)
+    }
+}
+
 export const login = credentials => {
         return dispatch => {
             return fetch('http://localhost:3001/api/v1/login', {
