@@ -10,7 +10,6 @@ class Api::V1::ListingsController < ApplicationController
     end
 
     def create
-        byebug
         if logged_in
         listing = current_user.listings.new(listing_params)
             if listing.save
