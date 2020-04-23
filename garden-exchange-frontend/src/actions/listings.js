@@ -4,6 +4,16 @@ export const getListings = listings => {
         listings
     }
 }
+export const addListing = listing => {
+    return {
+        type: "ADD_LISTING",
+        listing
+    }
+}
+
+
+//async functions
+
 export const fetchListings = () => {
     return dispatch => {
         return fetch ('http://localhost:3001/api/v1/listings', {
@@ -38,6 +48,6 @@ export const createListing = (listingInfo) => {
             body: JSON.stringify(listingInfo)
         })
             .then(resp => resp.json())
-            .then(listing => console.log(listing))
+            .then(listing => dispatch(addListing(listing)))
     }
 }
