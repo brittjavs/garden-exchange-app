@@ -5,12 +5,14 @@ import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
 //compose combines middlewares to combine them into one argument that gets passed to the store
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import currentUserReducer from './reducers/currentUserReducer.js';
+import currentUserReducer from './reducers/currentUserReducer';
 import { BrowserRouter as Router } from 'react-router-dom'
+import listingsReducer from './reducers/listingsReducer'
 
 
 const reducer = combineReducers({
- currentUser: currentUserReducer
+ currentUser: currentUserReducer,
+ listings: listingsReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
