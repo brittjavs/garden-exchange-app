@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from '../components/Login'
 import Signup from '../components/Signup'
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 
 class AccessPage extends React.Component {
     render(){

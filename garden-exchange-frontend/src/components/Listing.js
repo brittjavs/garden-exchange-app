@@ -1,7 +1,16 @@
 import React from 'react'
+import OfferInput from './OfferInput'
 
 class Listing extends React.Component {
-    
+   state = {
+       showOfferForm: false
+   }
+    handleClick = () => {
+        this.setState({
+            showOfferForm: !this.state.showOfferForm
+        })
+    }
+
     render(){
         const { listing } = this.props;
         return(
@@ -18,7 +27,8 @@ class Listing extends React.Component {
                 category:{listing.category}
                 <br />
                 </h5>
-                <button>Make an Offer</button>
+                <button onClick={this.handleClick}>Make an Offer</button>
+                {this.state.showOfferForm && <OfferInput listing={listing}/>}
             </div>
         )
     }

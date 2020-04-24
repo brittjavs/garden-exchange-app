@@ -39,12 +39,12 @@ export const createOffer = (offerInfo) => {
     console.log(offerInfo)
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/offers", {
-            credentials: "include",
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 'Accept': "application/json"
             },
+            credentials: "include",
             body: JSON.stringify(offerInfo)
         })
             .then(resp => resp.json())

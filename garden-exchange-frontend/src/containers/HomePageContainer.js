@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import { connect } from 'react-redux'
 import ListingsContainer from './ListingsContainer'
-import OffersContainer from './OffersContainer'
+// import OffersContainer from './OffersContainer'
 
 class HomePageContainer extends React.Component {
     render(){
@@ -14,8 +14,7 @@ class HomePageContainer extends React.Component {
                 </h4>
                 {this.props.currentUser.city}, {this.props.currentUser.state}
                 <NavBar />
-                {/* <ListingsContainer /> */}
-                <OffersContainer />
+                <ListingsContainer />
             </div>
         )
     }

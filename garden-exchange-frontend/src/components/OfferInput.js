@@ -9,7 +9,8 @@ class OfferInput extends React.Component {
         category: '',
         item: '',
         details: '',
-        qty: ''
+        qty: '',
+        listing_id: this.props.listing.id
     }
 
     handleOnChange = (event) => {

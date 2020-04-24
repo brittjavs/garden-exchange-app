@@ -14,7 +14,6 @@ class OffersContainer extends React.Component {
     render() {
         return (
             <div className="OffersContainer">
-                <OfferInput />
                 <Offers offers={this.props.offers}/>
             </div>
         )
