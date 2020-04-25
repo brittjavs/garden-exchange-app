@@ -3,15 +3,17 @@ import {connect} from 'react-redux'
 import { createOffer } from '../actions/offers.js'
 
 class OfferInput extends React.Component {
-
-    state = {
+   constructor(props){
+       super(props);
+       this.state = { 
         date: '',
         category: '',
         item: '',
         details: '',
         qty: '',
         listing_id: this.props.listing.id
-    }
+       }
+   } 
 
     handleOnChange = (event) => {
         this.setState({
