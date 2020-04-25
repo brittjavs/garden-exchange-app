@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { createOffer } from '../actions/offers.js'
+import { createOffer } from '../../actions/offers.js'
 
 class OfferInput extends React.Component {
    constructor(props){

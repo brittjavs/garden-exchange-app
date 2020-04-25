@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchOffers } from '../actions/offers'
-import OfferInput from '../components/OfferInput'
-import Offers from '../components/Offers'
+import Offers from '../components/offers/Offers'
 
 
 class OffersContainer extends React.Component {
