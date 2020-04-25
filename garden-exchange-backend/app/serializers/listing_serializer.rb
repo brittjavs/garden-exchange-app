@@ -7,7 +7,7 @@ class ListingSerializer
       options = {
         include: {
           user: {
-            only: [:username, :city, :state]
+            except: [:updated_at, :created_at, :password],
           }
         },
         except: [:updated_at, :created_at],

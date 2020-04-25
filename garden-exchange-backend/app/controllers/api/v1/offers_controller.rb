@@ -5,7 +5,7 @@ class Api::V1::OffersController < ApplicationController
     end
 
     def create
-        offer = Offer.new(offer_params)
+        offer = current_user.sent_offers.new(offer_params)
             offer.recipient_id = offer.listing.user_id 
             if offer.save
                 render json: OfferSerializer.new(offer).to_serialized_json
