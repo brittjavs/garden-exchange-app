@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_201649) do
+ActiveRecord::Schema.define(version: 2020_04_25_212002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "listings", force: :cascade do |t|
-    t.date "date"
+    t.date "date", default: "2020-04-23"
     t.string "item"
     t.string "category"
     t.string "details"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_201649) do
     t.string "category"
     t.string "details"
     t.integer "qty"
-    t.string "status"
+    t.string "status", default: "pending"
     t.integer "listing_id"
     t.bigint "sender_id"
     t.bigint "recipient_id"
