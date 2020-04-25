@@ -4,7 +4,6 @@ import { createOffer } from '../actions/offers.js'
 
 class OfferInput extends React.Component {
    constructor(props){
-       console.log(props)
        super(props);
        this.state = { 
         date: '',

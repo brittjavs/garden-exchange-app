@@ -14,7 +14,7 @@ class OffersContainer extends React.Component {
     render() {
         return (
             <div className="OffersContainer">
-                <Offers offers={this.props.offers}/>
+                <Offers offers={this.props.offers} currentUser={this.props.currentUser}/>
             </div>
         )
     }
@@ -22,7 +22,8 @@ class OffersContainer extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        offers: state.offers
+        offers: state.offers,
+        currentUser: state.currentUser
     }
 }
 
