@@ -1,11 +1,12 @@
 class Api::V1::OffersController < ApplicationController
     def index
-        offers = Offer.all
+        offers = Offer.where(sender_id: current_user.id).or(Offer.where(recipient_id: current_user.id))
         render json: OfferSerializer.new(offers).to_serialized_json
     end
 
     def create
         offer = Offer.new(offer_params)
+            offer.recipient_id = offer.listing.user_id 
             if offer.save
                 render json: OfferSerializer.new(offer).to_serialized_json
             else
@@ -21,7 +22,7 @@ class Api::V1::OffersController < ApplicationController
     private
 
     def offer_params
-        params.require(:offer).permit(:category, :item, :details, :qty, :listing_id, :sender_id, :recipient_id, :status, :date)
+        params.require(:offer).permit(:category, :item, :details, :qty, :listing_id, :sender_id, :status, :date)
     end
 
 end

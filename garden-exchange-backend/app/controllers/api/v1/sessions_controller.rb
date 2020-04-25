@@ -13,7 +13,7 @@ class Api::V1::SessionsController < ApplicationController
 
     def get_current_user
         if logged_in
-            byebug
+            
             render json: UserSerializer.new(current_user).to_serialized_json
         else
             render json: {
