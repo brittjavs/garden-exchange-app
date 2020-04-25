@@ -20,9 +20,11 @@ const Offers = ({ offers, currentUser}) => {
     return(
         <div className="myOffers">
             <div className="received-offers">
+                <h3>Offers Received</h3>
                 {receivedOffersList}
             </div>
             <div className="sent-offers">
+                <h3>Offers Sent</h3>
                 {sentOffersList}
             </div>
             

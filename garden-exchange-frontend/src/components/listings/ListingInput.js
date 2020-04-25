@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { createListing } from '../actions/listings.js'
+import { createListing } from '../../actions/listings'
 
 class ListingInput extends React.Component {
 

@@ -4,6 +4,7 @@ import ListingsContainer from './ListingsContainer'
 import { Switch, Route, NavLink } from 'react-router-dom'
 import OffersContainer from './OffersContainer'
 import Logout from '../components/Logout'
+import MyListings from '../components/listings/MyListings'
 
 class HomePageContainer extends React.Component {
 
@@ -25,6 +26,7 @@ class HomePageContainer extends React.Component {
                         <Switch>
                         <Route exact path='/' component={ListingsContainer} />
                         <Route exact path='/offers' component={OffersContainer} />
+                        <Route exact path='/myListings' component={MyListings} />
                         </Switch>
                         </div>
                  </div>

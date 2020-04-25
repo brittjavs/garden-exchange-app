@@ -1,5 +1,5 @@
 import React from 'react'
-import OfferInput from './OfferInput'
+import OfferInput from '../offers/OfferInput'
 
 class Listing extends React.Component {
    state = {
