@@ -26,7 +26,6 @@ class HomePageContainer extends React.Component {
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/offers">My Offers</NavLink>
                     <NavLink to="/myListings">My Listings</NavLink>
-                    <NavLink to="/logout">Logout</NavLink>
                         <div>
                         <Switch>
                         <Route exact path='/' component={ListingsContainer} />
