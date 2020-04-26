@@ -27,8 +27,7 @@ class Api::V1::ListingsController < ApplicationController
         end
     end
 
-    def destroy
-        byebug
+    def destroy      
         listing = Listing.find_by_id(params[:id])
         listing.delete
     end
