@@ -2,9 +2,11 @@ import React from 'react'
 import OfferInput from '../offers/OfferInput'
 
 class Listing extends React.Component {
+    
    state = {
        showOfferForm: false
    }
+
     handleClick = () => {
         this.setState({
             showOfferForm: !this.state.showOfferForm

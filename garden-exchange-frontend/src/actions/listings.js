@@ -69,7 +69,7 @@ export const deleteListing = (listingId) => {
             "Content-Type": "application/json"
           }
         })
-        .then(dispatch(completeDeleteListing(listingId)))
+        .then(resp => dispatch(completeDeleteListing(listingId)))
         // .then(listing => console.log(listing))
         // .then(listing => dispatch(deleteListingSuccess(listing)))
     }
