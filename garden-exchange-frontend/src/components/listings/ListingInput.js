@@ -37,10 +37,15 @@ class ListingInput extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Category</label>
-                    <input type="text" value={this.state.category} name="category" onChange={this.handleOnChange}/>
-                    <br />
+                    <select value={this.state.category} name="category" onChange={this.handleOnChange}>
+                        <option>Vegetable</option>
+                        <option>Fruit</option>
+                        <option>Herb</option>
+                        <option>Legume</option>
+                        <option>Nut</option>
+                    </select>                    <br />
                     <label>Qty:</label>
-                    <input type="text" value={this.state.qty} name="qty" onChange={this.handleOnChange}/>
+                    <input type="number" value={this.state.qty} min="1" name="qty" onChange={this.handleOnChange}/>
                     <br />
                     <label>Item</label>
                     <input type="text" value={this.state.item} name="item" onChange={this.handleOnChange}/>
