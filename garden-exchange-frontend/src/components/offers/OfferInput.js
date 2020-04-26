@@ -35,7 +35,7 @@ class OfferInput extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="new-offer-form">
                 <form onSubmit={this.handleSubmit}>
                     <label>Category</label>
                     <select value={this.state.category} name="category" onChange={this.handleOnChange}>

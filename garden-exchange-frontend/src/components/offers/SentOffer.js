@@ -7,7 +7,7 @@ class SentOffer extends React.Component {
     render(){
         const { sentOffer } = this.props;
         return(
-            <div className="sentOffer" key={sentOffer.id}>
+            <div className="sent-offer" key={sentOffer.id}>
                 <h5>
                 {sentOffer.date}
                 <br />

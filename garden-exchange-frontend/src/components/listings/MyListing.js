@@ -11,7 +11,7 @@ class MyListing extends React.Component {
                 <h5>
                 {listing.date}
                 <br />
-                {listing.user.username} has {listing.qty} {listing.item} available for trade.
+                You have {listing.qty} {listing.item} listed for trade.
                 <br />
                 Details: {listing.details}
                 <br />

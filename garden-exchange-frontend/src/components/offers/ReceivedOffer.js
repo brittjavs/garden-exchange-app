@@ -5,7 +5,7 @@ class ReceivedOffer extends React.Component {
     render(){
         const { receivedOffer } = this.props;
         return(
-            <div className="receivedOffer" key={receivedOffer.id}>
+            <div className="received-offer" key={receivedOffer.id}>
                 
                 <h5>
                 {receivedOffer.date}

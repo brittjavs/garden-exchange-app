@@ -17,7 +17,7 @@ const Offers = ({ offers, currentUser}) => {
 
       
     return(
-        <div className="myOffers">
+        <div className="my-offers">
             <div className="received-offers">
                 <h3>Offers Received</h3>
                 {receivedOffersList}
