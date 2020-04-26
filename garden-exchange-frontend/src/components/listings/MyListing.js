@@ -1,20 +1,17 @@
 import React from 'react'
-import OfferInput from '../offers/OfferInput'
+import { deleteListing } from '../../actions/listings'
+import {connect} from 'react-redux'
 
-class Listing extends React.Component {
-   state = {
-       showOfferForm: false
-   }
-    handleClick = () => {
-        this.setState({
-            showOfferForm: !this.state.showOfferForm
-        })
-    }
+class MyListing extends React.Component {
+    
+  handleCLick = () => {
+    deleteListing(this.props.listing.id)
+  }
 
-    render(){
+  render(){
         const { listing } = this.props;
         return(
-            <div className="listing" key={listing.id}>
+            <div className="my-listing" key={listing.id}>
                 <h5>
                 {listing.date}
                 <br />
@@ -27,11 +24,10 @@ class Listing extends React.Component {
                 category:{listing.category}
                 <br />
                 </h5>
-                <button onClick={this.handleClick}>Make an Offer</button>
-                {this.state.showOfferForm && <OfferInput listing={listing}/>}
+                <button onClick={this.handleCLick}>Delete</button>
             </div>
         )
     }
 }
 
-export default Listing
+export default connect(null, { deleteListing })(MyListing)

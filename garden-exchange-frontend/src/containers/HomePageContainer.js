@@ -4,10 +4,15 @@ import ListingsContainer from './ListingsContainer'
 import { Switch, Route, NavLink } from 'react-router-dom'
 import OffersContainer from './OffersContainer'
 import Logout from '../components/Logout'
+import {fetchOffers} from '../actions/offers'
+import { fetchListings }from '../actions/listings'
 import MyListings from '../components/listings/MyListings'
 
 class HomePageContainer extends React.Component {
-
+    componentDidMount(){
+        this.props.fetchListings()
+        this.props.fetchOffers()
+    }
     render(){
         return(
             
@@ -41,4 +46,4 @@ const mapStateToProps = state => {
     }
   }
 
-  export default connect(mapStateToProps)(HomePageContainer)
+  export default connect(mapStateToProps,{ fetchListings, fetchOffers})(HomePageContainer)

@@ -11,10 +11,10 @@ export const addListing = listing => {
     }
 }
 
-export const deleteListingSuccess = listing => {
+export const completeDeleteListing = listingId => {
     return {
         type: "DELETE_LISTING",
-        listing
+        listingId
     }
 }
 
@@ -62,11 +62,15 @@ export const createListing = (listingInfo) => {
 export const deleteListing = (listingId) => {
     console.log(listingId)
     return dispatch => {
-        return fetch(`http://localhost:3001/api/v1/listings/${listingId}/destroy`, {
-            credentials: "include",
-            method: "DELETE"
+        return fetch(`http://localhost:3001/api/v1/listings/${listingId}`, {
+          credentials: "include",
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          }
         })
-        .then(resp => resp.json())
-        .then(listing => dispatch(deleteListingSuccess(listing)))
+        .then(dispatch(completeDeleteListing(listingId)))
+        // .then(listing => console.log(listing))
+        // .then(listing => dispatch(deleteListingSuccess(listing)))
     }
 }

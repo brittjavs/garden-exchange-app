@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchOffers } from '../actions/offers'
+// import { fetchOffers } from '../actions/offers'
 import Offers from '../components/offers/Offers'
-
 
 class OffersContainer extends React.Component {
    
-    componentDidMount(){
-        this.props.fetchOffers()
-    }
+    // componentDidMount(){
+    //     console.log("Did Mount")
+    //     this.props.fetchOffers()
+    // }
 
     render() {
         return (
@@ -20,10 +20,12 @@ class OffersContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
+    console.log("Mapped Offers")
     return {
+        
         offers: state.offers,
         currentUser: state.currentUser
     }
 }
 
-export default connect(mapStateToProps, { fetchOffers })(OffersContainer)
+export default connect(mapStateToProps)(OffersContainer)
