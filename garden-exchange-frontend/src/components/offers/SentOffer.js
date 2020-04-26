@@ -1,4 +1,6 @@
 import React from 'react'
+import { deleteOffer } from '../../actions/offers'
+import {connect} from 'react-redux'
 
 class SentOffer extends React.Component {
     
@@ -17,11 +19,11 @@ class SentOffer extends React.Component {
                 <br />
                 status:{sentOffer.status}
                 </h5>
-                <button>Cancel Offer</button>
+                <button onClick={() => this.props.deleteOffer(sentOffer.id)}>Cancel Offer</button>
             </div>
         )
     }
 
 }
 
-export default SentOffer
+export default connect(null, { deleteOffer })(SentOffer)

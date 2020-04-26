@@ -11,6 +11,12 @@ export const addOffer = offer => {
     }
 }
 
+export const completeDeleteOffer = offerId => {
+    return {
+        type: "DELETE_OFFER",
+        offerId
+    }
+}
 
 //async functions
 
@@ -49,5 +55,20 @@ export const createOffer = (offerInfo) => {
         })
             .then(resp => resp.json())
             .then(offer => dispatch(addOffer(offer)))
+    }
+}
+
+export const deleteOffer = (offerId) => {
+    console.log(offerId)
+    return dispatch => {
+        return fetch(`http://localhost:3001/api/v1/offers/${offerId}`, {
+          credentials: "include",
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        .then(resp => dispatch(completeDeleteOffer(offerId)))
+        .then(alert("Offer Rescinded"))
     }
 }

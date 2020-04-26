@@ -3,7 +3,6 @@ import SentOffer from './SentOffer'
 import ReceivedOffer from './ReceivedOffer'
 
 const Offers = ({ offers, currentUser}) => {
-
     const sentOffers = offers.filter(offer=> offer.sender.username === currentUser.username);
 
     const receivedOffers = offers.filter(offer=> offer.recipient.username === currentUser.username);

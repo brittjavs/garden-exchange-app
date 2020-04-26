@@ -70,7 +70,6 @@ export const deleteListing = (listingId) => {
           }
         })
         .then(resp => dispatch(completeDeleteListing(listingId)))
-        // .then(listing => console.log(listing))
-        // .then(listing => dispatch(deleteListingSuccess(listing)))
+        .then(alert("Listing Removed"))
     }
 }

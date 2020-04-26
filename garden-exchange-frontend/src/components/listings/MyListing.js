@@ -4,8 +4,6 @@ import {connect} from 'react-redux'
 
 class MyListing extends React.Component {
 
-  
-
   render(){
         const { listing } = this.props;
         return(
@@ -22,7 +20,7 @@ class MyListing extends React.Component {
                 category:{listing.category}
                 <br />
                 </h5>
-                <button onClick={() => this.props.deleteListing(this.props.listing.id)}>Delete</button>
+                <button onClick={() => this.props.deleteListing(listing.id)}>Delete</button>
             </div>
         )
     }

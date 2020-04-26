@@ -6,10 +6,6 @@ import Listings from '../components/listings/Listings'
 
 
 class ListingsContainer extends React.Component {
-   
-    // componentDidMount(){
-    //     this.props.fetchListings()
-    // }
 
     render() {
         return (

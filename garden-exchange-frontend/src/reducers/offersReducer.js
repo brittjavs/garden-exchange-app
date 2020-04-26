@@ -4,6 +4,9 @@ export default function offersReducer (state = [], action){
             return action.offers
         case "ADD_OFFER":
             return [...state, action.offer]
+        case "DELETE_OFFER":
+            const offers = state.filter(offer => offer.id !== action.offerId);
+            return offers
         default:
             return state
     }
