@@ -9,6 +9,11 @@ class Api::V1::ListingsController < ApplicationController
         end
     end
 
+    def show
+        listing = Listing.find_by_id(params[:id])
+        render json: ListingSerializer.new(listings).to_serialized_json
+    end
+
     def create
         if logged_in
         listing = current_user.listings.new(listing_params)
@@ -23,6 +28,7 @@ class Api::V1::ListingsController < ApplicationController
     end
 
     def destroy
+        byebug
         listing = Listing.find_by_id(params[:id])
         listing.delete
     end

@@ -15,6 +15,7 @@ class Api::V1::OffersController < ApplicationController
     end
 
     def destroy
+        byebug
         offer = Offer.find_by_id(params[:id])
         offer.delete
     end
