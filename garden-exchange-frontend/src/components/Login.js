@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { login } from '../actions/currentUser.js'
 
 class Login extends React.Component {
-
+    
     state = {
         username: '',
         password: ''
@@ -23,6 +23,7 @@ class Login extends React.Component {
             username: '',
             password: ''
         })
+        this.props.history.push('/')
     }
 
     render(){

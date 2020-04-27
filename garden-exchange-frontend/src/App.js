@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render(){
     return (
-      this.props.currentUser ? <HomePageContainer /> : <AccessPage/>
+      this.props.currentUser ? <HomePageContainer currentUser={this.props.currentUser}/> : <AccessPage/>
     )
   }
 }

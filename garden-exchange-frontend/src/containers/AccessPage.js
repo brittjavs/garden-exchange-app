@@ -8,7 +8,7 @@ class AccessPage extends React.Component {
         return(
             <div className="LoginSignup">
                 <div>
-                    Welcome!
+                    Welcome to The Garden Exchange!
                      <br />
                     <Link to='/login'>Login</Link>
                     <br />

@@ -27,6 +27,8 @@ class Signup extends React.Component {
             city: '',
             state: ''
         })
+        this.props.history.push('/')
+
     }
 
     render(){
