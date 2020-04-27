@@ -20,7 +20,6 @@ class Api::V1::OffersController < ApplicationController
     end
 
     def update
-        binding.pry
         offer = Offer.find_by_id(params[:id])
         offer.update(status: params[:offer][:status])
         offer.save
