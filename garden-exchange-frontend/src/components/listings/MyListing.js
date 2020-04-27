@@ -2,10 +2,8 @@ import React from 'react'
 import { deleteListing } from '../../actions/listings'
 import {connect} from 'react-redux'
 
-class MyListing extends React.Component {
+const MyListing = ({listing, deleteListing}) => {
 
-  render(){
-        const { listing } = this.props;
         return(
             <div className="my-listing" key={listing.id}>
                 <h5>
@@ -20,10 +18,10 @@ class MyListing extends React.Component {
                 category:{listing.category}
                 <br />
                 </h5>
-                <button onClick={() => this.props.deleteListing(listing.id)}>Delete</button>
+                <button onClick={() => deleteListing(listing.id)}>Delete</button>
             </div>
         )
-    }
+    
 }
 
 export default connect(null, { deleteListing })(MyListing)

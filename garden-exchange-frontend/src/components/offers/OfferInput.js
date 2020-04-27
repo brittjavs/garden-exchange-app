@@ -6,7 +6,6 @@ class OfferInput extends React.Component {
    constructor(props){
        super(props);
        this.state = { 
-        date: '',
         category: '',
         item: '',
         details: '',
@@ -25,7 +24,6 @@ class OfferInput extends React.Component {
         event.preventDefault()
         this.props.createOffer(this.state)
         this.setState({
-            date: '',
             category: '',
             item: '',
             details: '',

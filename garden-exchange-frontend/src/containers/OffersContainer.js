@@ -4,11 +4,6 @@ import { connect } from 'react-redux'
 import Offers from '../components/offers/Offers'
 
 class OffersContainer extends React.Component {
-   
-    // componentDidMount(){
-    //     console.log("Did Mount")
-    //     this.props.fetchOffers()
-    // }
 
     render() {
         return (

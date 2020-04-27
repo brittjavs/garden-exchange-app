@@ -6,7 +6,7 @@ import OffersContainer from './OffersContainer'
 import Logout from '../components/Logout'
 import {fetchOffers} from '../actions/offers'
 import { fetchListings }from '../actions/listings'
-import MyListings from '../components/listings/MyListings'
+import MyListingsContainer from './MyListingsContainer'
 
 class HomePageContainer extends React.Component {
     componentDidMount(){
@@ -30,7 +30,7 @@ class HomePageContainer extends React.Component {
                         <Switch>
                         <Route exact path='/' component={ListingsContainer} />
                         <Route exact path='/offers' component={OffersContainer} />
-                        <Route exact path='/myListings' component={MyListings} />
+                        <Route exact path='/myListings' component={MyListingsContainer} />
                         </Switch>
                         </div>
                  </div>

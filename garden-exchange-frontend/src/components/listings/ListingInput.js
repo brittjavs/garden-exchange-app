@@ -5,7 +5,6 @@ import { createListing } from '../../actions/listings'
 class ListingInput extends React.Component {
 
     state = {
-        date: '',
         category: '',
         item: '',
         details: '',
@@ -23,7 +22,6 @@ class ListingInput extends React.Component {
         event.preventDefault()
         this.props.createListing(this.state)
         this.setState({
-            date: '',
             category: '',
             item: '',
             details: '',
@@ -43,11 +41,12 @@ class ListingInput extends React.Component {
                         <option>Herb</option>
                         <option>Legume</option>
                         <option>Nut</option>
-                    </select>                    <br />
+                    </select>                   
+                     <br />
                     <label>Qty:</label>
                     <input type="number" value={this.state.qty} min="1" name="qty" onChange={this.handleOnChange}/>
                     <br />
-                    <label>Item</label>
+                    <label>Item Name</label>
                     <input type="text" value={this.state.item} name="item" onChange={this.handleOnChange}/>
                     <br />
                     <label>Item Details</label>
