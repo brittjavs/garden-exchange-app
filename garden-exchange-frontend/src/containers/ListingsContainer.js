@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import ListingInput from '../components/listings/ListingInput'
 import Listings from '../components/listings/Listings'
+import SearchBar from '../components/SearchBar'
 
 
 class ListingsContainer extends React.Component {
@@ -10,6 +11,7 @@ class ListingsContainer extends React.Component {
         return (
             <div className="ListingsContainer">
                 <ListingInput />
+                <SearchBar />
                 <Listings listings={this.props.listings}/>
             </div>
         )
@@ -17,8 +19,12 @@ class ListingsContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
+    console.log(state.searchTerm)
     return {
-        listings: state.listings
+        listings: state.listings.filter(
+            listing => listing.item.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
+            listing.category.toLowerCase().includes(state.searchTerm.toLowerCase())
+        )
     }
 }
 

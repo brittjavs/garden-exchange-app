@@ -18,7 +18,6 @@ export const completeDeleteListing = listingId => {
     }
 }
 
-
 //async functions
 
 export const fetchListings = () => {
