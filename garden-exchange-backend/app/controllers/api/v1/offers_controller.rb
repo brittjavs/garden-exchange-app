@@ -4,6 +4,11 @@ class Api::V1::OffersController < ApplicationController
         render json: OfferSerializer.new(offers).to_serialized_json
     end
 
+    def show
+        offer = Offer.find_by_id(params[:id])
+        render json: OfferSerializer.new(offer).to_serialized_json
+    end
+
     def create
         offer = current_user.sent_offers.new(offer_params)
             offer.recipient_id = offer.listing.user_id 
@@ -12,6 +17,14 @@ class Api::V1::OffersController < ApplicationController
             else
                 render json: {error: 'Error creating offer'}
             end
+    end
+
+    def update
+        binding.pry
+        offer = Offer.find_by_id(params[:id])
+        offer.update(status: params[:offer][:status])
+        offer.save
+        render json: OfferSerializer.new(offer).to_serialized_json 
     end
 
     def destroy
