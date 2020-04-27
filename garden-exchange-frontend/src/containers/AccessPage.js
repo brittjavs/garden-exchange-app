@@ -7,14 +7,13 @@ class AccessPage extends React.Component {
     render(){
         return(
             <div className="LoginSignup">
-                <div>
-                    Welcome to The Garden Exchange!
+                <h2 id="public-welcome">Welcome to The Garden Exchange!</h2>
+                <div className="access-buttons">
                      <br />
                     <Link to='/login'>Login</Link>
                     <br />
                     <Link to='/signup'>Signup</Link>
                 </div>
-                
                 <Switch>
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/signup' component={Signup} />

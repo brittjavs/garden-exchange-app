@@ -17,9 +17,9 @@ class HomePageContainer extends React.Component {
         return(
             
             <div className="HomePageContainer">
-                <h4>
+                <h3 id="user-welcome">
                 Welcome {this.props.currentUser.username}
-                </h4>
+                </h3>
                 {this.props.currentUser.city}, {this.props.currentUser.state}
                 <div className="NavBar">
                     <Logout/>

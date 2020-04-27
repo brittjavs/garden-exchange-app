@@ -33,6 +33,7 @@ class ListingInput extends React.Component {
     render(){
         return(
             <div className="new-listing-form">
+                <h4> Post a Garden Item for Trade</h4>
                 <form onSubmit={this.handleSubmit}>
                     <label>Category</label>
                     <select value={this.state.category} name="category" onChange={this.handleOnChange}>
