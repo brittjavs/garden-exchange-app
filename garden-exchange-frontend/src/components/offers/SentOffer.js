@@ -19,7 +19,8 @@ class SentOffer extends React.Component {
                 <br />
                 status:{sentOffer.status}
                 </h5>
-                <button onClick={() => this.props.deleteOffer(sentOffer.id)}>Cancel Offer</button>
+                {sentOffer.status === "pending" ? 
+                <button onClick={() => this.props.deleteOffer(sentOffer.id)}>Cancel Offer</button> : ""}
             </div>
         )
     }
