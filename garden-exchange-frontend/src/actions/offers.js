@@ -18,6 +18,13 @@ export const completeDeleteOffer = offerId => {
     }
 }
 
+export const updateOffer = offer => {
+    return {
+        type: "UPDATE_OFFER",
+        offer
+    }
+}
+
 //async functions
 
 export const fetchOffers = () => {
@@ -70,5 +77,21 @@ export const deleteOffer = (offerId) => {
         })
         .then(resp => dispatch(completeDeleteOffer(offerId)))
         .then(alert("Offer Rescinded"))
+    }
+}
+
+export function updateStatus(offer) {
+    return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/offers/${offer.id}`, {
+            credentials: "include",
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                'Accept': "application/json"
+            },
+            body: JSON.stringify(offer)
+     })
+        .then(resp => resp.json())
+        .then(offer => dispatch(updateOffer(offer)))
     }
 }
