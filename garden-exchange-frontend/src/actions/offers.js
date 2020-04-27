@@ -83,7 +83,6 @@ export const deleteOffer = (offerId) => {
 export function updateStatus(offer) {
     return dispatch => {
     return fetch(`http://localhost:3001/api/v1/offers/${offer.id}`, {
-            credentials: "include",
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -92,6 +91,7 @@ export function updateStatus(offer) {
             body: JSON.stringify(offer)
      })
         .then(resp => resp.json())
-        .then(offer => dispatch(updateOffer(offer)))
+        // .then(offer => console.log(offer))
+         .then(offer => dispatch(updateOffer(offer)))
     }
 }
