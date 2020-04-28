@@ -17,12 +17,14 @@ class HomePageContainer extends React.Component {
         return(
             
             <div className="HomePageContainer">
-                <h3 id="user-welcome">
-                Welcome {this.props.currentUser.username}
-                </h3>
-                {this.props.currentUser.city}, {this.props.currentUser.state}
+                <div className="user-welcome">
+                    <h3>Welcome {this.props.currentUser.username}</h3>
+                <p>{this.props.currentUser.city}, {this.props.currentUser.state}</p>
+                </div>
+                
                 <div className="NavBar">
                     <Logout/>
+                    <br />
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/offers">My Offers</NavLink>
                     <NavLink to="/myListings">My Listings</NavLink>
