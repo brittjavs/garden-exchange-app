@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_212002) do
+ActiveRecord::Schema.define(version: 2020_04_28_014723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "listings", force: :cascade do |t|
-    t.date "date", default: "2020-04-23"
     t.string "item"
     t.string "category"
     t.string "details"
@@ -28,7 +27,6 @@ ActiveRecord::Schema.define(version: 2020_04_25_212002) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.date "date"
     t.string "item"
     t.string "category"
     t.string "details"
