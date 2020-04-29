@@ -13,7 +13,7 @@ class OfferSerializer
             only: [:username]
           }
         },
-        except: [:updated_at, :created_at],
+        except: [:updated_at],
       }
       @offer.to_json(options)
     end
