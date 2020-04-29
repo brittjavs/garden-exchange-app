@@ -29,6 +29,7 @@ class OfferInput extends React.Component {
             details: '',
             qty: ''
           });
+        this.props.toggle()
     }
 
     render(){

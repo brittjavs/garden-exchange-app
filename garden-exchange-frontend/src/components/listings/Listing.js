@@ -18,7 +18,7 @@ class Listing extends React.Component {
         return(
             <div className="listing" key={listing.id}>
                 <h5>
-                {listing.date}
+                {listing.created_at}
                 <br />
                 {listing.user.username} has {listing.qty} {listing.item} available for trade.
                 <br />
@@ -30,7 +30,7 @@ class Listing extends React.Component {
                 <br />
                 </h5>
                 <button onClick={this.handleClick}>Make an Offer</button>
-                {this.state.showOfferForm && <OfferInput listing={listing}/>}
+                {this.state.showOfferForm && <OfferInput listing={listing} toggle={this.handleClick}/>}
             </div>
         )
     }
