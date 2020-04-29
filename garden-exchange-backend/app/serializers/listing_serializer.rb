@@ -10,7 +10,7 @@ class ListingSerializer
             only: [:username, :city, :state]
           }
         },
-        except: [:updated_at, :created_at],
+        except: [:updated_at],
       }
       @listing.to_json(options)
     end
