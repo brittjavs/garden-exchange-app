@@ -8,7 +8,7 @@ const Listings = ({ listings }) => {
 
     return(
         <div className="listings">
-            {listingsList}
+            {listingsList.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)}
          </div>
     )    
 }

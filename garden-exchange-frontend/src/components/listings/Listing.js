@@ -12,13 +12,18 @@ class Listing extends React.Component {
             showOfferForm: !this.state.showOfferForm
         })
     }
-
+    //const date = 
+    // listing.created_at.toDateString()
+    //new Date(listing.created_at)
     render(){
         const { listing } = this.props;
+        const date = new Date(listing.created_at).toLocaleDateString()
+        //toDateString()
+        //.toLocaleDateString()
         return(
             <div className="listing" key={listing.id}>
                 <h5>
-                {listing.created_at}
+                {date}
                 <br />
                 {listing.user.username} has {listing.qty} {listing.item} available for trade.
                 <br />

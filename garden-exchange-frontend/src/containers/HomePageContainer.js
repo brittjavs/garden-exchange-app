@@ -13,7 +13,6 @@ class HomePageContainer extends React.Component {
         this.props.fetchListings()
         this.props.fetchOffers()
     }
-    
     render(){
         return(
             
