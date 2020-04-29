@@ -7,6 +7,7 @@ import Logout from '../components/Logout'
 import {fetchOffers} from '../actions/offers'
 import { fetchListings }from '../actions/listings'
 import MyListingsContainer from './MyListingsContainer'
+import ListingInput from '../components/listings/ListingInput'
 
 class HomePageContainer extends React.Component {
     componentDidMount(){
@@ -26,12 +27,14 @@ class HomePageContainer extends React.Component {
                     <Logout/>
                     <br />
                     <NavLink to="/">Home</NavLink>
-                    <NavLink to="/offers">My Offers</NavLink>
+                    <NavLink to = "/listing/new">Create A Listing</NavLink>
+                    <NavLink to="/myOffers">My Offers</NavLink>
                     <NavLink to="/myListings">My Listings</NavLink>
                         <div>
                         <Switch>
+                        <Route exact path='/listing/new' component={ListingInput} />
                         <Route exact path='/' component={ListingsContainer} />
-                        <Route exact path='/offers' component={OffersContainer} />
+                        <Route exact path='/myOffers' component={OffersContainer} />
                         <Route exact path='/myListings' component={MyListingsContainer} />
                         </Switch>
                         </div>

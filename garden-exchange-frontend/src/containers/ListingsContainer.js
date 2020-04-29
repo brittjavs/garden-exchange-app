@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ListingInput from '../components/listings/ListingInput'
 import Listings from '../components/listings/Listings'
 import SearchBar from '../components/SearchBar'
 
@@ -10,7 +9,6 @@ class ListingsContainer extends React.Component {
     render() {
         return (
             <div className="ListingsContainer">
-                <ListingInput />
                 <SearchBar />
                 <Listings listings={this.props.listings}/>
             </div>
