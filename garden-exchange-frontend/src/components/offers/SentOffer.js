@@ -6,10 +6,11 @@ class SentOffer extends React.Component {
     
     render(){
         const { sentOffer } = this.props;
+        const date = new Date(sentOffer.created_at).toLocaleDateString()
         return(
             <div className="sent-offer" key={sentOffer.id}>
                 <h5>
-                {sentOffer.date}
+                {date}
                 <br />
                 You offered {sentOffer.recipient.username} {sentOffer.qty} {sentOffer.item}.
                 <br />

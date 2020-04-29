@@ -20,11 +20,12 @@ class ReceivedOffer extends React.Component {
     
     render(){
         const { receivedOffer } = this.props;
+        const date = new Date(receivedOffer.created_at).toLocaleDateString()
         return(
             <div className="received-offer" key={receivedOffer.id}>
                 
                 <h5>
-                {receivedOffer.date}
+                {date}
                 <br />
                 {receivedOffer.sender.username} is offering you {receivedOffer.qty} {receivedOffer.item}.
                 <br />

@@ -20,11 +20,11 @@ const Offers = ({ offers, currentUser}) => {
         <div className="my-offers">
             <div className="received-offers">
                 <h3>Offers Received</h3>
-                {receivedOffersList}
+                {receivedOffersList.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)}
             </div>
             <div className="sent-offers">
                 <h3>Offers Sent</h3>
-                {sentOffersList}
+                {sentOffersList.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)}
             </div>
             
         </div>
