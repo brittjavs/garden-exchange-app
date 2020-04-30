@@ -37,19 +37,20 @@ class OfferInput extends React.Component {
             <div className="new-offer-form">
                 <form onSubmit={this.handleSubmit}>
                     <label>Category</label>
-                    <select value={this.state.category} name="category" onChange={this.handleOnChange}>
-                        <option>Vegetable</option>
+                    <select value={this.state.category} name="category" onChange={this.handleOnChange} required>
+                        <option></option>
                         <option>Fruit</option>
                         <option>Herb</option>
                         <option>Legume</option>
                         <option>Nut</option>
+                        <option>Vegetable</option>
                     </select>
                     <br />
                     <label>Qty:</label>
-                    <input type="number" value={this.state.qty} min="1" name="qty" onChange={this.handleOnChange}/>
+                    <input type="number" value={this.state.qty} min="1" name="qty" onChange={this.handleOnChange} required/>
                     <br />
                     <label>Item</label>
-                    <input type="text" value={this.state.item} name="item" onChange={this.handleOnChange}/>
+                    <input type="text" value={this.state.item} name="item" onChange={this.handleOnChange} required/>
                     <br />
                     <label>Item Details</label>
                     <input type="text" value={this.state.details} name="details" placeholder="optional" onChange={this.handleOnChange}/>

@@ -15,7 +15,6 @@ const Offers = ({ offers, currentUser}) => {
         return <ReceivedOffer key={receivedOffer.id} receivedOffer={receivedOffer}/>
     })
 
-      
     return(
         <div className="my-offers">
             <div className="received-offers">

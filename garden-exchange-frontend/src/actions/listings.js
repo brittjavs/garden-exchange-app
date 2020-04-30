@@ -4,6 +4,7 @@ export const getListings = listings => {
         listings
     }
 }
+
 export const addListing = listing => {
     return {
         type: "ADD_LISTING",
@@ -42,7 +43,6 @@ export const fetchListings = () => {
 }
 
 export const createListing = (listingInfo) => {
-    console.log(listingInfo)
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/listings", {
             credentials: "include",
