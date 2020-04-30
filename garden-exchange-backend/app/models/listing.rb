@@ -3,4 +3,5 @@ class Listing < ApplicationRecord
     has_many :offers
 
     validates :category, :item, :qty, presence: true
+    validates_inculsion_of :category, :in => ['fruit', 'vegetable', 'herb', 'nut', 'legume']
 end
