@@ -1,24 +1,19 @@
-# README
+# Garden Exchange API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the rails backend for the Garden Exchange Application.
 
-Things you may want to cover:
+# Usage
+In the terminal,
+* cd garden-exchange-app
+* cd garden-exchange-backend
+* run bundle install
 
-* Ruby version
+This api uses Postgresql database.
+To access database
+* rails db:setup
 
-* System dependencies
+To view data in the browser
+* run rails s
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The backend server is http://localhost:3001 and must be running to view the full, funcitonal application
+in conjunction with the react server on the frontend (view garden-exchange-frontend README)
