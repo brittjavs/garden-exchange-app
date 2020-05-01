@@ -17,7 +17,6 @@ class ListingsContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state.searchTerm)
     return {
         listings: state.listings.filter(
             listing => listing.item.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
