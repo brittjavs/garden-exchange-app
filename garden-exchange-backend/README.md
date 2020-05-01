@@ -15,5 +15,5 @@ To access database
 To view data in the browser
 * run rails s
 
-The backend server is http://localhost:3001 and must be running to view the full, funcitonal application
+The backend server is http://localhost:3001 and must be running to view the full, functional application
 in conjunction with the react server on the frontend (view garden-exchange-frontend README)
