@@ -27,6 +27,13 @@ class Api::V1::ListingsController < ApplicationController
         end
     end
 
+    def update
+        listing = Listing.find_by_id(params[:id])
+        listing.update(completed: params[:listing][:completed])
+        listing.save
+        render json: ListingSerializer.new(listing).to_serialized_json 
+    end
+
     def destroy      
         listing = Listing.find_by_id(params[:id])
         listing.delete
@@ -35,7 +42,7 @@ class Api::V1::ListingsController < ApplicationController
     private
 
     def listing_params
-        params.require(:listing).permit(:category, :item, :details, :qty, :user_id, :date, :wants)
+        params.require(:listing).permit(:category, :item, :details, :qty, :user_id, :date, :wants, :completed)
     end
 
 

@@ -11,6 +11,9 @@ class OfferSerializer
           },
           recipient: {
             only: [:username]
+          },
+          listing: {
+            except: [:updated_at, :created_at]
           }
         },
         except: [:updated_at],
