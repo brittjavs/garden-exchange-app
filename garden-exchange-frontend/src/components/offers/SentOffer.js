@@ -20,7 +20,7 @@ class SentOffer extends React.Component {
                 <br />
                 Offer status: {sentOffer.status}
                 </h5>
-                {sentOffer.status === "pending" ? 
+                {sentOffer.status === "pending" && sentOffer.listing.completed === false ? 
                 <button onClick={() => this.props.deleteOffer(sentOffer.id)}>Cancel Offer</button> : ""}
             </div>
         )

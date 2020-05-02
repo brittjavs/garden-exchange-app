@@ -10,9 +10,7 @@ class AccessPage extends React.Component {
                 <h2 id="public-welcome">Welcome to The Garden Exchange!</h2>
                 <div className="access-buttons">
                      <br />
-                    <Link to='/login'>Login</Link>
-                    <br />
-                    <Link to='/signup'>Signup</Link>
+                    <Link to='/login'>Login</Link> OR <Link to='/signup'>Signup</Link>
                 </div>
                 <Switch>
                     <Route exact path='/login' component={Login} />
