@@ -1,7 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Garden Exchange Frontend
-
+This app is meant as a plant swapping platform. A user can create an account with a username, and password. Once logged in, 
+they can see all active listings and send an offer to the listings creator. Through the navbar a user can navigate to a form to create a new listing as well as view their own active listings as well as offers they've received/sent.
+ 
 # Usage
 In the terminal,
 * cd garden-exchange-app
