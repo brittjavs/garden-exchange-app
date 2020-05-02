@@ -31,7 +31,7 @@ class Listing extends React.Component {
                 <br />
                 Looking For: {listing.wants}
                 <br />
-                category:{listing.category}
+                category: {listing.category}
                 <br />
                 </h5>
                 <button onClick={this.handleClick}>Make an Offer</button>

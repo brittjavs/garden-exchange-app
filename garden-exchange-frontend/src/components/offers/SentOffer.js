@@ -12,13 +12,13 @@ class SentOffer extends React.Component {
                 <h5>
                 {date}
                 <br />
-                You offered {sentOffer.recipient.username} {sentOffer.qty} {sentOffer.item}.
+                You offered {sentOffer.recipient.username} {sentOffer.qty} {sentOffer.item} in exchange for {sentOffer.listing.qty} {sentOffer.listing.item}.
                 <br />
-                Details: {sentOffer.details}
+                Offer Details: {sentOffer.details}
                 <br />
-                category:{sentOffer.category}
+                category: {sentOffer.category}
                 <br />
-                status:{sentOffer.status}
+                Offer status: {sentOffer.status}
                 </h5>
                 {sentOffer.status === "pending" ? 
                 <button onClick={() => this.props.deleteOffer(sentOffer.id)}>Cancel Offer</button> : ""}

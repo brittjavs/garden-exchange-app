@@ -10,7 +10,7 @@ class ListingsContainer extends React.Component {
         return (
             <div className="ListingsContainer">
                 <SearchBar />
-                <Listings listings={this.props.listings}/>
+                <Listings listings={this.props.listings.filter(listing => listing.completed === false)}/>
             </div>
         )
     }

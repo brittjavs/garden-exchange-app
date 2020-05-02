@@ -12,6 +12,13 @@ export const addListing = listing => {
     }
 }
 
+export const updateListing = listing => {
+    return {
+        type: "UPDATE_LISTING",
+        listing
+    }
+}
+
 export const completeDeleteListing = listingId => {
     return {
         type: "DELETE_LISTING",
@@ -55,6 +62,22 @@ export const createListing = (listingInfo) => {
         })
             .then(resp => resp.json())
             .then(listing => dispatch(addListing(listing)))
+    }
+}
+
+export function markComplete(listing) {
+    console.log(listing)
+    return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/listings/${listing.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                'Accept': "application/json"
+            },
+            body: JSON.stringify(listing)
+     })
+        .then(resp => resp.json())
+         .then(listing => dispatch(updateListing(listing)))
     }
 }
 

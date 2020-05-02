@@ -1,21 +1,34 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {updateStatus} from '../../actions/offers'
+import {markComplete} from '../../actions/listings'
 
 class ReceivedOffer extends React.Component {
-    state = {
-        status: ''
+    constructor(props){
+        super(props);
+        this.state = {
+            status: '',
+            completed: false
+        }
     }
+
+    // state = {
+    //     status: '',
+    //     completed: ''
+    // }
     
         handleClick = (event) => {
             this.setState({
                 status: event.target.value
             }, () => {
-                let offer = {...this.state, id: this.props.receivedOffer.id}
+                let offer = {status: this.state.status , id: this.props.receivedOffer.id}
                 console.log(offer)
                 this.props.updateStatus(offer)
+                if (this.state.status === "accepted"){
+                    let listing = {completed: !this.state.completed, id: this.props.receivedOffer.id}
+                    this.props.markComplete(listing)
+                }
             })
-            
         }
     
     render(){
@@ -27,14 +40,15 @@ class ReceivedOffer extends React.Component {
                 <h5>
                 {date}
                 <br />
-                {receivedOffer.sender.username} is offering you {receivedOffer.qty} {receivedOffer.item}.
+                {receivedOffer.sender.username} is offering you {receivedOffer.qty} {receivedOffer.item} in exchange for your {receivedOffer.listing.qty} {receivedOffer.listing.item}.
                 <br />
-                Details: {receivedOffer.details}
+                Offer Details: {receivedOffer.details}
                 <br />
-                category:{receivedOffer.category}
+                category: {receivedOffer.category}
                 <br />
-                Status: {receivedOffer.status}
+                Offer Status: {receivedOffer.status}
                 </h5>
+
                 {receivedOffer.status === "pending" ?
                 <div>
                     <button value="accepted" onClick={this.handleClick}>Accept</button> 
@@ -47,4 +61,4 @@ class ReceivedOffer extends React.Component {
     }
 }
 
-export default connect(null, {updateStatus})(ReceivedOffer)
+export default connect(null, {updateStatus, markComplete})(ReceivedOffer)
