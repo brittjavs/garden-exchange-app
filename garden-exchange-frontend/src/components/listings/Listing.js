@@ -4,7 +4,8 @@ import OfferInput from '../offers/OfferInput'
 class Listing extends React.Component {
     
    state = {
-       showOfferForm: false
+       showOfferForm: false,
+       likeCount: 0
    }
 
     handleClick = () => {
@@ -12,6 +13,12 @@ class Listing extends React.Component {
             showOfferForm: !this.state.showOfferForm
         })
     }
+
+    // handleLikeClick = () => {
+    //     this.setState({
+    //         likeCount: this.state.likeCount + 1
+    //     })
+    // }
     //const date = 
     // listing.created_at.toDateString()
     //new Date(listing.created_at)
@@ -36,6 +43,7 @@ class Listing extends React.Component {
                 </h5>
                 <button onClick={this.handleClick}>Make an Offer</button>
                 {this.state.showOfferForm && <OfferInput listing={listing} toggle={this.handleClick}/>}
+                {/* <button onClick={this.handleLikeClick}>Likes {this.state.likeCount}</button> */}
             </div>
         )
     }

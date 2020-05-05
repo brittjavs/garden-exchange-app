@@ -21,3 +21,9 @@ export default function listingsReducer (state = [], action){
             return state
     }
 }
+
+function greet(greeting = "hello"){
+    console.log(greeting, "Brittany")
+}
+
+greet()
