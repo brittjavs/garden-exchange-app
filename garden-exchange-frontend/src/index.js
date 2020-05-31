@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
-//compose combines middlewares to combine them into one argument that gets passed to the store
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import currentUserReducer from './reducers/currentUserReducer';

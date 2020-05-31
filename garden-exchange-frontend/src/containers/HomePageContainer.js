@@ -18,6 +18,7 @@ class HomePageContainer extends React.Component {
         return(
             
             <div className="home-page-container">
+                <h1>Garden Exchange</h1>
                 <div className="user-welcome">
                     <h2>Welcome {this.props.currentUser.username}!</h2>
                     {this.props.currentUser.city}, {this.props.currentUser.state}

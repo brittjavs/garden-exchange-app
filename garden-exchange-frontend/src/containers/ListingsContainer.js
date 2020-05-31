@@ -10,6 +10,7 @@ class ListingsContainer extends React.Component {
         return (
             <div className="ListingsContainer">
                 <SearchBar />
+                <h3>Available Listings</h3>
                 <Listings listings={this.props.listings.filter(listing => listing.completed === false)}/>
             </div>
         )
@@ -20,7 +21,8 @@ const mapStateToProps = state => {
     return {
         listings: state.listings.filter(
             listing => listing.item.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
-            listing.category.toLowerCase().includes(state.searchTerm.toLowerCase())
+            listing.category.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
+            listing.user.city.toLowerCase().includes(state.searchTerm.toLowerCase())
         )
     }
 }

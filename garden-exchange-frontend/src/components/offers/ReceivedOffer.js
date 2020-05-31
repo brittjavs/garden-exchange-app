@@ -42,7 +42,7 @@ class ReceivedOffer extends React.Component {
                 <br />
                 {receivedOffer.sender.username} is offering you {receivedOffer.qty} {receivedOffer.item} in exchange for your {receivedOffer.listing.qty} {receivedOffer.listing.item}.
                 <br />
-                Offer Details: {receivedOffer.details}
+                Details: {receivedOffer.details}
                 <br />
                 category: {receivedOffer.category}
                 <br />

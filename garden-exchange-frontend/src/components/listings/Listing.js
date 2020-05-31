@@ -29,10 +29,9 @@ class Listing extends React.Component {
         //.toLocaleDateString()
         return(
             <div className="listing" key={listing.id}>
-                <h5>
                 {date}
                 <br />
-                {listing.user.username} has {listing.qty} {listing.item} available for trade.
+                {listing.user.username} has {listing.qty} {listing.item} available for trade in {listing.user.city}, {listing.user.state}.
                 <br />
                 Details: {listing.details}
                 <br />
@@ -40,7 +39,6 @@ class Listing extends React.Component {
                 <br />
                 category: {listing.category}
                 <br />
-                </h5>
                 <button onClick={this.handleClick}>Make an Offer</button>
                 {this.state.showOfferForm && <OfferInput listing={listing} toggle={this.handleClick}/>}
                 {/* <button onClick={this.handleLikeClick}>Likes {this.state.likeCount}</button> */}

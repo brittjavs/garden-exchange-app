@@ -35,7 +35,7 @@ class ListingInput extends React.Component {
             <div className="new-listing-form">
                 <h4> Post a Garden Item for Trade</h4>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Category</label>
+                    <label>Category: </label>
                     <select value={this.state.category} name="category" onChange={this.handleOnChange} required>
                         <option></option>
                         <option>Fruit</option>
@@ -45,16 +45,16 @@ class ListingInput extends React.Component {
                         <option>Vegetable</option>
                     </select>                   
                      <br />
-                    <label>Qty:</label>
+                    <label>Qty: </label>
                     <input type="number" value={this.state.qty} min="1" name="qty" onChange={this.handleOnChange} required/>
                     <br />
-                    <label>Item Name</label>
+                    <label>Item Name: </label>
                     <input type="text" value={this.state.item} name="item" onChange={this.handleOnChange} required/>
                     <br />
-                    <label>Item Details</label>
+                    <label>Item Details: </label>
                     <input type="text" value={this.state.details} name="details" placeholder="optional" onChange={this.handleOnChange}/>
                     <br />
-                    <label>I'm Looking For:</label>
+                    <label>I'm Looking For: </label>
                     <input type="text" placeholder="optional" value={this.state.wants} name="wants" onChange={this.handleOnChange}/>
                     <br />
                     <input type="submit" value="Post Listing"/>
