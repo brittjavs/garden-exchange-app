@@ -18,10 +18,10 @@ class HomePageContainer extends React.Component {
         return(
             
             <div className="home-page-container">
-                <h1>Garden Exchange</h1>
+                <h1>The Garden Exchange</h1>
+                <h4>Swap seeds or plants to add to your diverse garden</h4>
                 <div className="user-welcome">
                     <h2>Welcome {this.props.currentUser.username}!</h2>
-                    {this.props.currentUser.city}, {this.props.currentUser.state}
                     <Logout/>
                 </div>
                 
